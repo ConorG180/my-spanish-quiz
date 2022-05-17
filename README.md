@@ -1,6 +1,13 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Spanish quiz
+This programme is designed to test a user's level of spanish and to assist them in learning the Spanish language. This quiz is designed not only to grade the user's level of spanish, but also to provide the user with the correct translation of the word once they have guessed, thus helping them to learn more.  
+The quiz can be played on an easy, medium or hard level of difficulty to adapt to player's different levels of the language, and there will be a different dictionary of words chosen depending on the user's chosen difficulty.  
+The user also has the feature to choose the amount of words to be graded on, with a maximum of 100 words per game.  
 
-Welcome USER_NAME,
+The full **[Spanish quiz](<!-- Add Heroku project link here later -->)** game can be played here. Go on, have a go!
+
+<!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+
+Welcome Conor,
 
 This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
 
@@ -28,4 +35,4 @@ Connect your GitHub repository and deploy as normal.
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 -----
-Happy coding!
+Happy coding! -->
