@@ -12,6 +12,12 @@ def main():
     It builds a quiz object from input collected from user and
     also validates user input via the quiz object."""
     print("Hello there! Welcome to the Spanish quiz!\n")
+    print("So, what's your name?\n")
+    while True:
+        name = input("Enter your name below here:\n")
+        if Quiz.validate_user_name(name):
+            break
+    print(f"Hi {name}!")
 
 
 main()
