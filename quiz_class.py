@@ -24,7 +24,13 @@ class Quiz:
                     f"Your name {name} cannot be more than 20 characters!\n"
                     f"You entered {len(name)}!\n"
                 )
+            elif name.isalpha() != True:
+                raise ValueError(
+                    f"Your name can only contain letters!\n"
+                    f"No numbers or special characters allowed!\n"
+                    f"You entered {name}.\n"
+                )
         except ValueError as e:
-            print(f"Invalid data:\n {e} Give it another go.")
+            print(f"Invalid data:\n{e} Give it another go.")
             return False
         return True
