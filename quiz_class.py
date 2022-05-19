@@ -3,6 +3,8 @@ This is a python module which contains the Quiz class.
 We import this module from our run.py file
 to create and run the quiz from there. """
 
+import re
+
 
 class Quiz:
     """ Create quiz class """
@@ -24,7 +26,7 @@ class Quiz:
                     f"Your name {name} cannot be more than 20 characters!\n"
                     f"You entered {len(name)}!\n"
                 )
-            elif name.isalpha() != True:
+            elif name.isalpha() is not True:
                 raise ValueError(
                     f"Your name can only contain letters!\n"
                     f"No numbers or special characters allowed!\n"
@@ -32,5 +34,24 @@ class Quiz:
                 )
         except ValueError as e:
             print(f"Invalid data:\n{e} Give it another go.")
+            return False
+        return True
+
+    @staticmethod
+    def validate_diff(level):
+        """ 
+        This method is used to validate the user's chosen
+        difficulty level"""
+        diff_regex = "^[^\W_]e|m|h{1,1}$"
+        try:
+            validity = re.search(level.lower(), diff_regex)
+            # Confirm user input contains only "e", "m", or "h"
+            if bool(validity) is False or level.isalpha() is False:
+                raise ValueError(
+                    'You need to enter either "e", "m", or "h"\n'
+                    'without any other characters.'
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e} Give it another go.")
             return False
         return True
