@@ -18,6 +18,16 @@ def main():
         if Quiz.validate_user_name(name):
             break
     print(f"Hi {name}!")
+    print(
+        f"So {name}, what level of difficulty would you like\n"
+        f"to play at?"
+    )
+    while True:
+        diff_level = input(
+            'Enter "e" for easy, "m" for medium, or "h" for hard\n'
+        )
+        if Quiz.validate_diff(diff_level):
+            break
 
 
 main()
