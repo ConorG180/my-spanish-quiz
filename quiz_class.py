@@ -49,7 +49,7 @@ class Quiz:
             if bool(validity) is False or level.isalpha() is False:
                 raise ValueError(
                     'You need to enter either "e", "m", or "h"\n'
-                    'without any other characters.'
+                    'without any other characters.\n'
                 )
         except ValueError as e:
             print(f"Invalid data: {e} Give it another go.")
@@ -65,3 +65,17 @@ class Quiz:
         else:
             level = "hard"
         return level
+    
+    @staticmethod
+    def validate_word_count(num):
+        try:
+            int(num)
+            if int(num) < 1 or int(num) > 100:
+                raise ValueError(
+                    "Please enter a number between 1 and 100.\n"
+                    "No more, no less!\n"
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}Give it another go")
+            return False
+        return True
