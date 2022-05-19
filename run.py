@@ -28,6 +28,22 @@ def main():
         )
         if Quiz.validate_diff(diff_level):
             break
+    print(
+        f"Thank you {name}, you have chosen the "
+        f"{Quiz.print_difficulty(diff_level)} level\n"
+        f"And finally, how many words do you want in your quiz?\n"
+        f"Please note, the maxiumum amount is 100 words."
+    )
+    while True:
+        word_count = input(
+            "Enter the number of words you want to be tested on\n"
+            "below this statement. Your number should be from 1 - 100\n"
+        )
+        if Quiz.validate_word_count(word_count):
+            break
+    print(
+        f"Thank you {name}! We will now begin your quiz"
+    )
 
 
 main()
