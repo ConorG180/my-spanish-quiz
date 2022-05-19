@@ -55,3 +55,13 @@ class Quiz:
             print(f"Invalid data: {e} Give it another go.")
             return False
         return True
+
+    @staticmethod
+    def print_difficulty(level):
+        if level == "e":
+            level = "easy"
+        elif level == "m":
+            level = "medium"
+        else:
+            level = "hard"
+        return level
