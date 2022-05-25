@@ -1,7 +1,7 @@
 """
 A dictionary of spanish - english translations
 which are deemed to be at a hard level of difficulty"""
-easy_words = [
+hard_words = [
     {"ha empujado": "he has pushed/she has pushed/it has pushed"},
     {"siete": "seven"},
     {"párrafo": "paragraph"},
