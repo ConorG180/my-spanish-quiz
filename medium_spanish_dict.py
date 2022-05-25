@@ -1,7 +1,7 @@
 """
 A dictionary of spanish - english translations
 which are deemed to be at a medium level of difficulty"""
-medium_dict = [
+medium_words = [
     {"sistema": "system"},
     {"ocupado": "busy"},
     {"prueba": "test/he tries/she tries/try"},
