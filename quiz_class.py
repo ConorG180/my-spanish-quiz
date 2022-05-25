@@ -4,6 +4,10 @@ We import this module from our run.py file
 to create and run the quiz from there. """
 
 import re
+from easy_spanish_dict import easy_words
+from medium_spanish_dict import medium_words
+from hard_spanish_dict import hard_words
+import random
 
 
 class Quiz:
@@ -79,3 +83,26 @@ class Quiz:
             print(f"Invalid data: {e}Give it another go")
             return False
         return True
+
+    def play(self):
+        """
+        Play the quiz."""
+        # Depending on difficulty, populate quiz words array
+        # from different dictionaries.
+        if self.difficulty_level == "e":
+            quiz_words = [word for word in random.choices(
+                easy_words, k=int(self.word_count)
+            )]
+        if self.difficulty_level == "m":
+            quiz_words = [word for word in random.choices(
+                medium_words, k=int(self.word_count)
+            )]
+        if self.difficulty_level == "h":
+            quiz_words = [word for word in random.choices(
+                hard_words, k=int(self.word_count)
+            )]
+        # print(quiz_words)
+        for word in quiz_words:
+            for key, value in word.items():
+                input(f"type your answer!\n"
+                f"your word is: {key}.\n")
