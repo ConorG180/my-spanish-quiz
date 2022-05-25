@@ -44,6 +44,8 @@ def main():
     print(
         f"Thank you {name}! We will now begin your quiz"
     )
+    user_quiz = Quiz(name, diff_level, word_count)
+    user_quiz.play()
 
 
 main()
