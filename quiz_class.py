@@ -104,5 +104,23 @@ class Quiz:
         # print(quiz_words)
         for word in quiz_words:
             for key, value in word.items():
-                input(f"type your answer!\n"
-                f"your word is: {key}.\n")
+                user_answer = input(    
+                    f"Question {quiz_words.index(word) + 1}!\n"
+                    f"your word is: {key}.\n"
+                )
+                correct_answers = value.split("/")
+                correct_answers = [answ.lower() for answ in correct_answers]
+                if user_answer.lower() in correct_answers:
+                    print("Correct!")
+                    if len(correct_answers) > 1:
+                        correct_answers.remove(user_answer.lower())
+                        print(
+                            f"Other correct answers include:\n"
+                            f"{'/'.join(correct_answers)}"
+                        )
+                else:
+                    print("Not correct!")
+                    print(
+                        f"Your answer should be any of the following:\n"
+                        f"{'/'.join(correct_answers)}"
+                    )
