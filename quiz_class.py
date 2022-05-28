@@ -46,9 +46,10 @@ class Quiz:
         """ 
         This method is used to validate the user's chosen
         difficulty level"""
-        diff_regex = "^[^\W_]e|m|h{1,1}$"
+        diff_regex = "^[e|m|h]{1}$"
+
         try:
-            validity = re.search(level.lower(), diff_regex)
+            validity = re.search(diff_regex, level.lower())
             # Confirm user input contains only "e", "m", or "h"
             if bool(validity) is False or level.isalpha() is False:
                 raise ValueError(
@@ -62,9 +63,9 @@ class Quiz:
 
     @staticmethod
     def print_difficulty(level):
-        if level == "e":
+        if level.lower() == "e":
             level = "easy"
-        elif level == "m":
+        elif level.lower() == "m":
             level = "medium"
         else:
             level = "hard"
