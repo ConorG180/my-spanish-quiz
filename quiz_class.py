@@ -16,7 +16,7 @@ class Quiz:
         self.user_name = user_name
         self.difficulty_level = difficulty_level
         self.word_count = word_count
-
+        self.score = 0
     @staticmethod
     def validate_user_name(name):
         """
@@ -85,6 +85,10 @@ class Quiz:
             return False
         return True
 
+    def set_score(self, correct):
+        if correct:
+            self.score += 1
+
     def play(self):
         """
         Play the quiz."""
@@ -118,9 +122,11 @@ class Quiz:
                             f"Other correct answers include:\n"
                             f"{'/'.join(correct_answers)}"
                         )
+                    self.set_score(True)
                 else:
                     print("Not correct!")
                     print(
                         f"Your answer should be any of the following:\n"
                         f"{'/'.join(correct_answers)}"
                     )
+                    self.set_score(False)
