@@ -90,18 +90,17 @@ class Quiz:
         # Depending on difficulty, populate quiz words array
         # from different dictionaries.
         if self.difficulty_level == "e":
-            quiz_words = [word for word in random.choices(
-                easy_words, k=int(self.word_count)
-            )]
+            quiz_words = [word for word in random.sample(
+                easy_words, k=int(self.word_count))]
+
         if self.difficulty_level == "m":
-            quiz_words = [word for word in random.choices(
-                medium_words, k=int(self.word_count)
-            )]
+            quiz_words = [word for word in random.sample(
+                medium_words, k=int(self.word_count))]
+
         if self.difficulty_level == "h":
-            quiz_words = [word for word in random.choices(
-                hard_words, k=int(self.word_count)
-            )]
-        # print(quiz_words)
+            quiz_words = [word for word in random.sample(
+                hard_words, k=int(self.word_count))]
+
         for word in quiz_words:
             for key, value in word.items():
                 user_answer = input(    
