@@ -30,7 +30,7 @@ class Quiz:
                     f"Your name {name} cannot be more than 20 characters!\n"
                     f"You entered {len(name)}!\n"
                 )
-            elif name.isalpha() is not True:
+            elif name.replace(" ", "").isalpha() is not True:
                 raise ValueError(
                     f"Your name can only contain letters!\n"
                     f"No numbers or special characters allowed!\n"
