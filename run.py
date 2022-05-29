@@ -19,6 +19,7 @@ def main():
         if Quiz.validate_user_name(name):
             break
     print(f"Hi {name}!")
+    Quiz.clear_terminal(2)
     print(
         f"So {name}, what level of difficulty would you like\n"
         f"to play at?"
@@ -28,6 +29,7 @@ def main():
             'Enter "e" for easy, "m" for medium, or "h" for hard\n'
         )
         if Quiz.validate_diff(diff_level):
+            Quiz.clear_terminal()
             break
     print(
         f"Thank you {name}, you have chosen the "
@@ -41,9 +43,11 @@ def main():
             "below this statement. Your number should be from 1 - 100\n"
         )
         if Quiz.validate_word_count(word_count):
+            Quiz.clear_terminal()
             break
     print(
-        f"Thank you {name}! We will now begin your quiz"
+        f"Thank you {name}! You have chosen {word_count} words.\n"
+        "We will now begin your quiz."
     )
     user_quiz = Quiz(name, diff_level, word_count)
     user_quiz.play()
