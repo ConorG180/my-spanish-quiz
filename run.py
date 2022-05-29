@@ -4,6 +4,7 @@ It contains the main function, which
 builds the quiz object and runs the quiz."""
 
 from quiz_class import Quiz
+from grade_class import Grade
 
 
 def main():
@@ -46,6 +47,10 @@ def main():
     )
     user_quiz = Quiz(name, diff_level, word_count)
     user_quiz.play()
+    score = user_quiz.get_score()
+    user_grade = Grade(score, int(word_count))
+    user_grade.assign_grade()
+    user_grade.print_grade()
 
 
 main()
