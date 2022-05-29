@@ -14,6 +14,7 @@ Before beginning the project, a flow chart was designed to visualize the logic b
  - User input validation - The programme includes validation checking on all user input entered into the programme. Rather than crashing the programme, the user will receive a relevant error message upon the wrong input being entered, and asked to repeat their input.
  - Difficulties - The programme is designed to be played on either an easy, medium or hard difficulty. This allows for users of various levels of spanish to enjoy and participate in the quiz, thereby increasing accessibility and the target audience of the programme.
  - Score - During the game, the user's score is tracked. This is used to calculate how many questions the user has gotten correct, and how many they have gotten incorrect. It is also later used to find out the user's percentage of right/wrong answers.
+ - Grading - At the end of the game, the user will be given a grade based on how well they have done (based off the irish grading system e.g. B1, B2, A1 etc.), along with a comment which is relevant to their grade. Other statistics include a percentage of the user's correct/incorrect answers, how many correct and incorrect answers the user has inputted, and the total amount of words that they have been tested on.
 <!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Conor,
