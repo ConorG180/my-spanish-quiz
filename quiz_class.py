@@ -11,12 +11,13 @@ import random
 
 
 class Quiz:
-    """ Create quiz class """
+    """ Create Quiz class """
     def __init__(self, user_name, difficulty_level, word_count):
         self.user_name = user_name
         self.difficulty_level = difficulty_level
         self.word_count = word_count
         self.score = 0
+
     @staticmethod
     def validate_user_name(name):
         """
@@ -88,6 +89,9 @@ class Quiz:
     def set_score(self, correct):
         if correct:
             self.score += 1
+    
+    def get_score(self):
+        return self.score
 
     def play(self):
         """
