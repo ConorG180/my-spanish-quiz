@@ -8,6 +8,8 @@ from easy_spanish_dict import easy_words
 from medium_spanish_dict import medium_words
 from hard_spanish_dict import hard_words
 import random
+from os import system, name
+from time import sleep
 
 
 class Quiz:
@@ -38,7 +40,8 @@ class Quiz:
                     f"You entered {name}.\n"
                 )
         except ValueError as e:
-            print(f"Invalid data:\n{e} Give it another go.")
+            print(f"Invalid data:\n{e}Give it another go.")
+            Quiz.clear_terminal(3.5)
             return False
         return True
 
@@ -58,7 +61,8 @@ class Quiz:
                     'without any other characters.\n'
                 )
         except ValueError as e:
-            print(f"Invalid data: {e} Give it another go.")
+            print(f"Invalid data: {e}Give it another go.")
+            Quiz.clear_terminal(3)
             return False
         return True
 
@@ -83,8 +87,14 @@ class Quiz:
                 )
         except ValueError as e:
             print(f"Invalid data: {e}Give it another go")
+            Quiz.clear_terminal(2)
             return False
         return True
+
+    @staticmethod
+    def clear_terminal(timeout=0):
+        sleep(timeout)
+        system("cls" if name == "nt" else "clear")
 
     def set_score(self, correct):
         if correct:
@@ -134,3 +144,4 @@ class Quiz:
                         f"{'/'.join(correct_answers)}"
                     )
                     self.set_score(False)
+                self.clear_terminal(2)
