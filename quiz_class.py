@@ -7,9 +7,11 @@ import re
 from easy_spanish_dict import easy_words
 from medium_spanish_dict import medium_words
 from hard_spanish_dict import hard_words
+from grade_class import Grade
 import random
-from os import system, name
+from os import system, name, execv
 from time import sleep
+from sys import executable, argv
 
 
 class Quiz:
@@ -96,6 +98,10 @@ class Quiz:
         sleep(timeout)
         system("cls" if name == "nt" else "clear")
 
+    @staticmethod
+    def script_restart():
+        execv(executable, ['python'] + argv)
+
     def set_score(self, correct):
         if correct:
             self.score += 1
@@ -145,3 +151,21 @@ class Quiz:
                     )
                     self.set_score(False)
                 self.clear_terminal(2)
+    
+    def end_game(self):
+        play_again = input(
+            f"So {self.user_name}, do you want to play again with the same settings?\n"
+            "Type y for yes, r to restart, or e to exit\n"
+
+        )
+        if play_again == "y":
+            self.score = 0
+            self.play()
+            user_grade = Grade(self.score, int(self.word_count))
+            user_grade.assign_grade()
+            user_grade.print_grade()
+            self.end_game()
+        elif play_again == "r":
+            self.script_restart()
+        elif play_again == "e":
+            exit()
