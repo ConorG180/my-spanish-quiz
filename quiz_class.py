@@ -151,14 +151,41 @@ class Quiz:
                     )
                     self.set_score(False)
                 self.clear_terminal(2)
+
+    def end_game_validation(self, user_input):
+        """Used to validate the user's input 
+        when the game has finished."""
+        play_again_regex = "^[y|r|e]{1}$"
+        try:
+            validity = re.search(play_again_regex, user_input.lower())
+            # Confirm user input contains only "y", "r", or "e"
+            if bool(validity) is False or user_input.isalpha() is False:
+                raise ValueError(
+                    'You need to enter either "y", "r", or "e"\n'
+                    'without any other characters.\n'
+                )
+        except ValueError as e:
+            print(f"Invalid data: {e}Give it another go.")
+            Quiz.clear_terminal(2)
+            return False
+        return True
     
     def end_game(self):
+        """Method called once the game has ended.
+        The user can either decide to replay the 
+        game with the original settings, restart
+        the game entirely and choose different
+        settings, or exit from the programme."""
         play_again = input(
-            f"So {self.user_name}, do you want to play again with the same settings?\n"
+            f"So {self.user_name}, do you want to play again"
+            " with the same settings?\n"
             "Type y for yes, r to restart, or e to exit\n"
-
         )
+        # Used to validate the user's input when ending the game.
+        if self.end_game_validation(play_again) is False:
+            return False
         if play_again == "y":
+            # Call relevant functions to play game again with same settings.
             self.score = 0
             self.play()
             user_grade = Grade(self.score, int(self.word_count))
@@ -166,6 +193,8 @@ class Quiz:
             user_grade.print_grade()
             self.end_game()
         elif play_again == "r":
+            # Call function to restart the script.
             self.script_restart()
         elif play_again == "e":
+            # Call function to exit from the programme.
             exit()
