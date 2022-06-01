@@ -55,7 +55,8 @@ def main():
     user_grade = Grade(score, int(word_count))
     user_grade.assign_grade()
     user_grade.print_grade()
-    user_quiz.end_game()
+    while True:
+        user_quiz.end_game()
     
 
 main()
