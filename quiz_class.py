@@ -128,10 +128,21 @@ class Quiz:
 
         for word in quiz_words:
             for key, value in word.items():
-                user_answer = input(    
-                    f"Question {quiz_words.index(word) + 1}!\n"
-                    f"your word is: {key}.\n"
-                )
+                while True:
+                    try:
+                        user_answer = input(    
+                            f"Question {quiz_words.index(word) + 1}!\n"
+                            f"your word is: {key}.\n"
+                        )
+                        if user_answer.replace(" ", "").isalpha() is False:
+                            raise ValueError(
+                                "Enter only letters! No symbols,"
+                                " special characters or symbols.\n")
+                    except ValueError as e:
+                        print(f"Invalid data: {e} Give it another go")
+                        self.clear_terminal(2)
+                        continue
+                    break
                 correct_answers = value.split("/")
                 correct_answers = [answ.lower() for answ in correct_answers]
                 if user_answer.lower() in correct_answers:
