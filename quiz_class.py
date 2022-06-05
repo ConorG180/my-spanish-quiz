@@ -23,23 +23,24 @@ class Quiz:
         self.score = 0
 
     @staticmethod
-    def validate_user_name(name):
+    def validate_user_name(user_name):
         """
         This method is used to validate the user's
         name once they enter it to to the terminal
         returns true/false to determine if while
         loop will continue or break"""
         try:
-            if len(name) > 20:
+            if len(user_name) > 20:
                 raise ValueError(
-                    f"Your name {name} cannot be more than 20 characters!\n"
-                    f"You entered {len(name)}!\n"
+                    f"Your name {user_name} cannot"
+                    f"be more than 20 characters!\n"
+                    f"You entered {len(user_name)}!\n"
                 )
-            elif name.replace(" ", "").isalpha() is not True:
+            elif user_name.replace(" ", "").isalpha() is not True:
                 raise ValueError(
                     f"Your name can only contain letters!\n"
                     f"No numbers or special characters allowed!\n"
-                    f"You entered {name}.\n"
+                    f"You entered {user_name}.\n"
                 )
         except ValueError as e:
             print(f"Invalid data:\n{e}Give it another go.")
@@ -49,7 +50,7 @@ class Quiz:
 
     @staticmethod
     def validate_diff(level):
-        """ 
+        """
         This method is used to validate the user's chosen
         difficulty level"""
         diff_regex = "^[e|m|h]{1}$"
@@ -77,7 +78,7 @@ class Quiz:
         else:
             level = "hard"
         return level
-    
+
     @staticmethod
     def validate_word_count(num):
         try:
@@ -105,7 +106,7 @@ class Quiz:
     def set_score(self, correct):
         if correct:
             self.score += 1
-    
+
     def get_score(self):
         return self.score
 
@@ -130,7 +131,7 @@ class Quiz:
             for key, value in word.items():
                 while True:
                     try:
-                        user_answer = input(    
+                        user_answer = input(
                             f"Question {quiz_words.index(word) + 1}!\n"
                             f"your word is: {key}.\n"
                         )
@@ -164,7 +165,7 @@ class Quiz:
                 self.clear_terminal(2)
 
     def end_game_validation(self, user_input):
-        """Used to validate the user's input 
+        """Used to validate the user's input
         when the game has finished."""
         play_again_regex = "^[y|r|e]{1}$"
         try:
@@ -180,10 +181,10 @@ class Quiz:
             Quiz.clear_terminal(2)
             return False
         return True
-    
+
     def end_game(self):
         """Method called once the game has ended.
-        The user can either decide to replay the 
+        The user can either decide to replay the
         game with the original settings, restart
         the game entirely and choose different
         settings, or exit from the programme."""
