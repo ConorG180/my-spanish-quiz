@@ -1,0 +1,2 @@
+# Browser Compatability
+Whilst testing how the programme ran in Heroku and on different browsers, including Firefox, Google Chrome and Microsoft Edge, no browser-specific issues were found. However, a bug was found which was specific to Heroku. An exit feature was originally put into the quiz, which allowed the user to close the programme when finished the quiz. Whilst this ran perfectly on the terminal in the gitpod IDE, this was unfortunately causing a crash in Heroku. As a result, this feature was removed.
