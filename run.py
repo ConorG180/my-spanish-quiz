@@ -51,12 +51,12 @@ def main():
     )
     user_quiz = Quiz(name, diff_level, word_count)
     user_quiz.play()
-    score = user_quiz.get_score()
+    score = user_quiz.score
     user_grade = Grade(score, int(word_count))
     user_grade.assign_grade()
     user_grade.print_grade()
     while True:
         user_quiz.end_game()
-    
+
 
 main()
