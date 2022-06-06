@@ -4,14 +4,14 @@ We import this module from our run.py file
 to create and run the quiz from there. """
 
 import re
-from easy_spanish_dict import easy_words
-from medium_spanish_dict import medium_words
-from hard_spanish_dict import hard_words
-from grade_class import Grade
 import random
 from os import system, name, execv
 from time import sleep
 from sys import executable, argv
+from easy_spanish_dict import easy_words
+from medium_spanish_dict import medium_words
+from hard_spanish_dict import hard_words
+from grade_class import Grade
 
 
 class Quiz:
@@ -71,6 +71,9 @@ class Quiz:
 
     @staticmethod
     def print_difficulty(level):
+        """This method is used to print the difficulty level
+        to the user in run.py. It prints out 'easy' instead of
+        'e', 'medium' instead of 'm', and hard instead of 'h'."""
         if level.lower() == "e":
             level = "easy"
         elif level.lower() == "m":
@@ -81,6 +84,11 @@ class Quiz:
 
     @staticmethod
     def validate_word_count(num):
+        """This method is used to validate the number of
+        words which the user inputs for their quiz. This
+        method will throw an error message if the user input
+        cannot be converted into a number, or if the value
+        of the number of words is above 100 or below 0"""
         try:
             int(num)
             if int(num) < 1 or int(num) > 100:
@@ -96,19 +104,28 @@ class Quiz:
 
     @staticmethod
     def clear_terminal(timeout=0):
+        """This method is used to clear the terminal and
+        maintain the neatness/tidyness of the user's display.
+        It takes a timeout parameter, which acts as a timer for
+        when the terminal will clear. If called without the
+        timeout parameter, its default value is 0."""
         sleep(timeout)
         system("cls" if name == "nt" else "clear")
 
     @staticmethod
     def script_restart():
+        """This method simply restarts the script/programme
+        from the beginning. This is called at the end of
+        the quiz if the user wishes to replay the quiz but
+        with different settings."""
         execv(executable, ['python'] + argv)
 
     def set_score(self, correct):
+        """This function simply sets the score
+        property to increase should the user
+        input the correct answer."""
         if correct:
             self.score += 1
-
-    def get_score(self):
-        return self.score
 
     def play(self):
         """
