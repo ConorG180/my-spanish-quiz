@@ -184,13 +184,13 @@ class Quiz:
     def end_game_validation(self, user_input):
         """Used to validate the user's input
         when the game has finished."""
-        play_again_regex = "^[y|r|e]{1}$"
+        play_again_regex = "^[y|r]{1}$"
         try:
             validity = re.search(play_again_regex, user_input.lower())
-            # Confirm user input contains only "y", "r", or "e"
+            # Confirm user input contains only "y", or "r".
             if bool(validity) is False or user_input.isalpha() is False:
                 raise ValueError(
-                    'You need to enter either "y", "r", or "e"\n'
+                    'You need to enter either "y", or "r" \n'
                     'without any other characters.\n'
                 )
         except ValueError as e:
@@ -202,13 +202,14 @@ class Quiz:
     def end_game(self):
         """Method called once the game has ended.
         The user can either decide to replay the
-        game with the original settings, restart
+        game with the original settings, or restart
         the game entirely and choose different
-        settings, or exit from the programme."""
+        settings."""
         play_again = input(
             f"So {self.user_name}, do you want to play again"
             " with the same settings?\n"
-            "Type y for yes, r to restart, or e to exit\n"
+            "Type y for yes or r to restart the programme, and"
+            " choose different settings"
         )
         # Used to validate the user's input when ending the game.
         if self.end_game_validation(play_again) is False:
@@ -224,6 +225,3 @@ class Quiz:
         elif play_again == "r":
             # Call function to restart the script.
             self.script_restart()
-        elif play_again == "e":
-            # Call function to exit from the programme.
-            exit()
