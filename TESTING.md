@@ -13,12 +13,15 @@ Whilst testing on run.py, no validation errors were found. Please see below for 
 Whilst testing on quiz_class.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
   ![PEP8online testing image of quiz_class.py](assets/testing-images/quiz_class.py-testing-pep8online.png "PEP8online testing image of quiz_class.py")
-  ### grade_class.py
+### grade_class.py
 Whilst testing on grade_class.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
   ![PEP8online testing image of grade_class.py](assets/testing-images/grade_class.py-testing-pep8online.png "PEP8online testing image of grade_class.py")
-  ### easy_spanish_dict.py
+### easy_spanish_dict.py
 Whilst testing on easy_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
   ![PEP8online testing image of easy_spanish_dict.py](assets/testing-images/easy_spanish_dict.py-testing-pep8online.png "PEP8online testing image of easy_spanish_dict.py")
-
+### medium_spanish_dict.py
+Whilst testing on medium_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
+#### **Images**  
+  ![PEP8online testing image of medium_spanish_dict.py](assets/testing-images/medium_spanish_dict.py-testing-pep8online.png "PEP8online testing image of medium_spanish_dict.py")
