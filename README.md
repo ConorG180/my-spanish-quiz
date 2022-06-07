@@ -6,7 +6,7 @@ The user also has the feature to choose the amount of words to be graded on, wit
 The full **[Spanish quiz](<!-- Add Heroku project link here later -->)** game can be played here. Go on, have a go!
 # Flow chart
 Before beginning the project, a flow chart was designed to visualize the logic behind the programme. The flow chart can be seen below. Please note that this flowchart was made in the initial design process for the project, and some minor changes may be incorporated as the project is being built. One example of this can be seen in requesting the user for their name. This is currently requested in the programme, however it is not present in the flowchart.  
-![Spanish quiz flowchart](assets/flow-charts/spanish-quiz-flowchart.drawio.png "Spanish quiz flowchart")
+![Spanish quiz flowchart](assets/flow-charts/flowcharts/spanish-quiz-flowchart.drawio.png "Spanish quiz flowchart")
 
 # Features
 ## Existing Features
