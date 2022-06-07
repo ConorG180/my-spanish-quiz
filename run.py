@@ -12,8 +12,13 @@ def main():
     This main function is what runs the quiz from start to finish.
     It builds a quiz object from input collected from user and
     also validates user input via the quiz object."""
-    print("Hello there! Welcome to the Spanish quiz!\n")
-    print("So, what's your name?\n")
+    print(
+        "Hello there! Welcome to the Spanish quiz!\n"
+        "This quiz will provide you with a spanish\n"
+        "word and you will be tasked with providing\n"
+        "the correct translation as an answer!\n"
+        "So, what's your name?\n"
+    )
     while True:
         name = input("Enter your name below here:\n")
         if Quiz.validate_user_name(name):
