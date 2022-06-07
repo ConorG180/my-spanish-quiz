@@ -8,5 +8,9 @@ The official PEP8 online validator was used on all python files within the proje
 ### run.py
 Whilst testing on run.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
-  ![PEP8online test image before testing bugs on run.py](assets/testing-images/run.py-testing-pep8online.png "PEP8online test image before testing bugs on run.py")
+  ![PEP8online testing image of run.py](assets/testing-images/run.py-testing-pep8online.png "PEP8online testing image of run.py")
+### quiz_class.py
+Whilst testing on quiz_class.py, no validation errors were found. Please see below for the testing screenshot.
+#### **Images**  
+  ![PEP8online testing image of quiz_class.py](assets/testing-images/quiz_class.py-testing-pep8online.png "PEP8online testing image of quiz_class.py")
 
