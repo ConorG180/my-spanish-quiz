@@ -41,19 +41,19 @@ class Grade:
             self.grade = "F"
             self.grade_comment = "You failed!! Study harder hombre!"
 
-        elif self.score_percent > 40 and self.score_percent < 55:
+        elif self.score_percent >= 40 and self.score_percent < 55:
             self.grade = self.make_grade("D", 55)
             self.grade_comment = "You passed, you did ok!"
 
-        elif self.score_percent > 55 and self.score_percent < 70:
+        elif self.score_percent >= 55 and self.score_percent < 70:
             self.grade = self.make_grade("C", 70)
             self.grade_comment = "You did average and passed! Good."
 
-        elif self.score_percent > 70 and self.score_percent < 85:
+        elif self.score_percent >= 70 and self.score_percent < 85:
             self.grade = self.make_grade("B", 85)
             self.grade_comment = "Very good! You did above average"
 
-        elif self.score_percent > 85 and self.score_percent < 100:
+        elif self.score_percent >= 85 and self.score_percent < 100:
             self.grade = self.make_grade("A", 100)
             self.grade_comment = "Very good! You nailed it!!"
 
@@ -66,7 +66,7 @@ class Grade:
         statistics and comments about the
         user's quiz"""
         print(
-            f"out of {self.total_words} questions,\n"
+            f"Out of {self.total_words} questions,\n"
             f"You correctly answered {self.score}.\n"
             f"You incorrectly answered {self.incorrect_answers}.\n"
             f"This gives you a mark of {self.score_percent}%.\n"
