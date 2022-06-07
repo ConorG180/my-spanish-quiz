@@ -180,7 +180,7 @@ class Quiz:
                     )
                     self.set_score(False)
                 input(
-                    "Hit any key to proceed."
+                    "Hit enter to proceed."
                 )
                 self.clear_terminal()
 
