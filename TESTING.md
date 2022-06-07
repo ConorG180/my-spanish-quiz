@@ -25,3 +25,7 @@ Whilst testing on easy_spanish_dict.py, no validation errors were found. Please 
 Whilst testing on medium_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
   ![PEP8online testing image of medium_spanish_dict.py](assets/testing-images/medium_spanish_dict.py-testing-pep8online.png "PEP8online testing image of medium_spanish_dict.py")
+### hard_spanish_dict.py
+Whilst testing on hard_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
+#### **Images**  
+  ![PEP8online testing image of hard_spanish_dict.py](assets/testing-images/hard_spanish_dict.py-testing-pep8online.png "PEP8online testing image of hard_spanish_dict.py")
