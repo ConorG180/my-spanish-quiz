@@ -169,17 +169,20 @@ class Quiz:
                         correct_answers.remove(user_answer.lower())
                         print(
                             f"Other correct answers include:\n"
-                            f"{'/'.join(correct_answers)}"
+                            f"{'/'.join(correct_answers)}."
                         )
                     self.set_score(True)
                 else:
                     print("Not correct!")
                     print(
                         f"Your answer should be any of the following:\n"
-                        f"{'/'.join(correct_answers)}"
+                        f"{'/'.join(correct_answers)}."
                     )
                     self.set_score(False)
-                self.clear_terminal(2)
+                input(
+                    "Hit any key to proceed."
+                )
+                self.clear_terminal()
 
     def end_game_validation(self, user_input):
         """Used to validate the user's input
@@ -208,8 +211,8 @@ class Quiz:
         play_again = input(
             f"So {self.user_name}, do you want to play again"
             " with the same settings?\n"
-            "Type y for yes or r to restart the programme, and"
-            " choose different settings"
+            "Type y for yes or r to restart the programme, and "
+            "choose different settings\n\n"  # Make sure this works, the \n
         )
         # Used to validate the user's input when ending the game.
         if self.end_game_validation(play_again) is False:
