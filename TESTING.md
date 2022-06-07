@@ -16,5 +16,9 @@ Whilst testing on quiz_class.py, no validation errors were found. Please see bel
   ### grade_class.py
 Whilst testing on grade_class.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
-  ![PEP8online testing image of grade_class.py](assets/testing-images/grade_class.py-testing-pep8online.png "PEP8online testing image of grade_classTESTING.m.py")
+  ![PEP8online testing image of grade_class.py](assets/testing-images/grade_class.py-testing-pep8online.png "PEP8online testing image of grade_class.py")
+  ### easy_spanish_dict.py
+Whilst testing on easy_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
+#### **Images**  
+  ![PEP8online testing image of easy_spanish_dict.py](assets/testing-images/easy_spanish_dict.py-testing-pep8online.png "PEP8online testing image of easy_spanish_dict.py")
 
