@@ -24,6 +24,17 @@ Before beginning the project, a flow chart was designed to visualize the logic b
  - Phrases - Currently, the dictionaries used to hold the words simply hold the spanish word as a key, and the english translation as the value. However, a feature may later be added to this programme whereby a second key is added to each of these dictionaries called "phrase" which would give an example of how the word is used in a Spanish sentence once the user has attempted their answer. This would help the user to learn more, as it would not only provide a phrase for the user and in turn more Spanish vocabulary, but would also help with grammar and allow the user to better understand the context of where the word is typically used.
  - Grammar/Vocabulary/Verbs modes - To better target a user's particular area of learning, it may be a good idea to provide different modes in which the quiz could be run. This would involve creating 3 separate dictionaries for each type of mode (one for easy, medium and hard) and then inputting the correct words(grammar, vocabulary or verbs) into the appropriate dictionaries depending on their degree of difficulty.
 
+<!-- Data model -->
+# Data model
+I decided to create this programme with an Object Orientated Programming (OOP) methodology. The programme uses the inputs provided by the user (specifically the user's name, chosen difficulty level and number of words for their quiz) to create an object declared as ```user_quiz``` from the ```Quiz``` class. This class is located in the python file ```quiz_class.py```, and contains the relevant methods used to run the quiz from start to finish. Once the user has answered their requested number of words in the quiz, another object is created and declared as ```user_grade```. This object is made from the Grade class which takes one parameter of the user's score, and another parameter of the user's requested number of words for their quiz. It is located in ```grade_class.py```, and contains all methods which are related to the user's obtained grade at the end of the quiz. Objects from the ```Quiz``` class and ```Grade``` class are created in the ```run.py``` file. Images from both the ```Quiz``` class and ```Grade``` class can be seen below, as well as the ```user_quiz``` and ```user_grade``` objects being created in ```run.py```.
+### images
+#### quiz_class.py
+![quiz_class.py OOP representation](assets/code-images/quiz_class.py-object-oriented-programming-representation.png "quiz_class.py OOP representation")  
+#### grade_class.py
+![grade_class.py OOP representation](assets/code-images/grade_class.py-object-oriented-programming-representation.png "grade_class.py OOP representation")  
+#### run.py
+![run.py OOP representation](assets/code-images/run.py-object-oriented-programming-representation.png "run.py.py OOP representation")
+<!-- Local deployment - mention  -->
 # Testing and bugs
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
 <!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
