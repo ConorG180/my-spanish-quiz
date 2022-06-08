@@ -29,3 +29,11 @@ Whilst testing on medium_spanish_dict.py, no validation errors were found. Pleas
 Whilst testing on hard_spanish_dict.py, no validation errors were found. Please see below for the testing screenshot.
 #### **Images**  
   ![PEP8online testing image of hard_spanish_dict.py](assets/testing-images/hard_spanish_dict.py-testing-pep8online.png "PEP8online testing image of hard_spanish_dict.py")
+
+# Unfixed bugs
+During testing of the programme, purposeful attempts were made to break the game and cause crashes to the programme. One particular bug was found which crashed the programme during this testing method, however it unfortunately could not be replicated and the cause is currently unknown. A screenshot of the attached crash is below. It is believed that the bug may be asynchronous in nature, and that the programme called ```user_quiz.play``` in ```run.py``` before the dictionary ```quiz_words``` was declared within the ```if``` statement in ```quiz_class.py```. There are two current predictions as to why this occured.
+ - The ```if``` statement (currently beginning on line 135 in ```quiz_class.py```) didn't meet the relevant conditions to declare ```quiz_words```.
+ - The ```while``` loop (currently beginning on line 32 in ```run.py```) broke too soon, and went on to ask the user for the number of words needed, and then once the user has entered that, ```user_quiz.play``` was called (currently beginning on line 58 in ```run.py```).
+
+# Fixed bugs
+During the programme, one particular bug occurred whilst using regular expressions to test if a user's input was correct. The programme would mostly work, however failed on special characters. This bug was caused by the arguments for the function ```re.search``` (currently beginning on line 59 in ```quiz_class.py```) being in the wrong positions. Once this was fixed, the regular expression worked as expected.
