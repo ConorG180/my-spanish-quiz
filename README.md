@@ -18,13 +18,13 @@ Before beginning the project, a flow chart was designed to visualize the logic b
  - Object oriented programming (OOP) - This project was created using the OOP methodology. Because of this, the code should have increased readibility and be easier to add new features and maintain in the future, and will also be advantageous to others who may wish to update/edit/study the programme.
  - Automatic clearing of terminal - A method was created to automatically clear the user terminal at various stages throughout the script. This makes the programme more readable and aesthetic for the user, as there is only a little bit of new information to be processed as opposed to lots of information, most of which the user will have read already.
  - Play again, restart or exit - When the user has completed their quiz, they then have 3 options to pick from - They can either choose to replay the quiz with the same settings (Same name, number of words and difficulty), restart the game to play with different settings, or exit the game entirely.
+
 ## Future features
  - English to Spanish questions - In the future, a feature may be added to allow the user to be tested on words in English, and attempt to provide a translation of the word in to Spanish.
  - Saving grades - A feature may be added to allow the user to save the grade in the form of a .txt document. This feature simply involves asking the user if they would like to save their grade, along with all their statistics about how they have done on the quiz. If the user wants, a .txt document would be written up outlining the user's grade and quiz results, and be saved on to the user's device.
  - Phrases - Currently, the dictionaries used to hold the words simply hold the spanish word as a key, and the english translation as the value. However, a feature may later be added to this programme whereby a second key is added to each of these dictionaries called "phrase" which would give an example of how the word is used in a Spanish sentence once the user has attempted their answer. This would help the user to learn more, as it would not only provide a phrase for the user and in turn more Spanish vocabulary, but would also help with grammar and allow the user to better understand the context of where the word is typically used.
  - Grammar/Vocabulary/Verbs modes - To better target a user's particular area of learning, it may be a good idea to provide different modes in which the quiz could be run. This would involve creating 3 separate dictionaries for each type of mode (one for easy, medium and hard) and then inputting the correct words(grammar, vocabulary or verbs) into the appropriate dictionaries depending on their degree of difficulty.
 
-<!-- Data model -->
 # Data model
 I decided to create this programme with an Object Orientated Programming (OOP) methodology. The programme uses the inputs provided by the user (specifically the user's name, chosen difficulty level and number of words for their quiz) to create an object declared as ```user_quiz``` from the ```Quiz``` class. This class is located in the python file ```quiz_class.py```, and contains the relevant methods used to run the quiz from start to finish. Once the user has answered their requested number of words in the quiz, another object is created and declared as ```user_grade```. This object is made from the Grade class which takes one parameter of the user's score, and another parameter of the user's requested number of words for their quiz. It is located in ```grade_class.py```, and contains all methods which are related to the user's obtained grade at the end of the quiz. Objects from the ```Quiz``` class and ```Grade``` class are created in the ```run.py``` file. Images from both the ```Quiz``` class and ```Grade``` class can be seen below, as well as the ```user_quiz``` and ```user_grade``` objects being created in ```run.py```.
 ### images
@@ -34,7 +34,51 @@ I decided to create this programme with an Object Orientated Programming (OOP) m
 ![grade_class.py OOP representation](assets/code-images/grade_class.py-object-oriented-programming-representation.png "grade_class.py OOP representation")  
 #### run.py
 ![run.py OOP representation](assets/code-images/run.py-object-oriented-programming-representation.png "run.py.py OOP representation")
-<!-- Local deployment - mention  -->
+
+# Local deployment
+## Deployment
+Code Institute has provided a [template](https://github.com/Code-Institute-Org/python-essentials-template) to display the terminal view of this backend application in a modern web browser. This is to improve the accessibility of the project to others.
+
+The live deployed application can be found at [spanish-quiz](https://spanish-quiz.herokuapp.com/).
+​
+### Local Deployment
+​
+*Gitpod* IDE was used to write the code for this project.
+​
+To make a local copy of this repository, you can clone the project by typing the follow into your IDE terminal:
+- `git clone https://github.com/my-spanish-quiz.git`  
+​
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.  
+​
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/my-spanish-quiz)
+### Heroku Deployment
+​
+This project uses [Heroku](https://www.heroku.com), a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+​
+Deployment steps are as follows, after account setup:
+​
+- Select *New* in the top-right corner of your Heroku Dashboard, and select *Create new app* from the dropdown menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select *Create App*.
+- From the new app *Settings*, click *Reveal Config Vars*, and set the value of KEY to `PORT`, and the value to `8000` then select *add*.
+- Further down, to support dependencies, select *Add Buildpack*.
+- The order of the buildpacks is important, select `Python` first, then `Node.js` second. (if they are not in this order, you can drag them to rearrange them)
+​
+Heroku needs two additional files in order to deploy properly.
+- requirements.txt
+- Procfile
+​
+You can install this project's requirements (where applicable) using: `pip3 install -r requirements.txt`. If you have your own packages that have been installed, then the requirements file needs updated using: `pip3 freeze --local > requirements.txt`
+​
+The Procfile can be created with the following command: `echo web: node index.js > Procfile`
+​
+For Heroku deployment, follow these steps to connect your GitHub repository to the newly created app:
+​
+- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
+- Set the remote for Heroku: `heroku git:remote -a <app_name>` (replace app_name with your app, without the angle-brackets)
+- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type: `git push heroku main`
+​
+The frontend terminal should now be connected and deployed to Heroku.
+
 # Testing and bugs
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
 
@@ -51,34 +95,3 @@ The sources below were used when trying to solve intricate problems within the p
 I want to thank the following people and companies for their help in providing solid technical support whilst developing this project.
   - Tim Nelson (Code Institute mentor).
   - [Code Institute](https://codeinstitute.net/ie/).
-<!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-Welcome Conor,
-
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding! -->
