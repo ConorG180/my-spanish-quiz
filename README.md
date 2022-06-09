@@ -37,6 +37,20 @@ I decided to create this programme with an Object Orientated Programming (OOP) m
 <!-- Local deployment - mention  -->
 # Testing and bugs
 For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+# Credits
+## Content
+The sources below were used when trying to solve intricate problems within the programme and played a solid role in helping me to build this project.
+  - [W3schools](https://www.w3schools.com/) was used as a learning resource and helped me to learn more about various python functions and concepts, and also aided in learning about the syntax of the language
+  - Corey Schafer's [Youtube channel](https://www.youtube.com/channel/UCCezIgC97PvUuR4_gbFUs5g) was instrumental in assisting me when working with python functions, and how to apply them to my programme.
+  - [Stack Overflow](https://stackoverflow.com/) was used as a learning resource and helped me with any questions I had whilst building the project.
+  - [draw.io](https://drawio-app.com/) helped me to design the flowchart for the project.
+  - [Spanish Academy](https://www.spanish.academy/blog/1000-most-common-spanish-words-for-beginners/) Helped me with findin suitable words for the project. Though it mentions that the words used are for beginners, I believed that this was a good selection of words for both intermediate and advanced levels also. Please note that some words were modified/altered to reflect a more accurate translation to english.
+
+## Acknowledgements
+I want to thank the following people and companies for their help in providing solid technical support whilst developing this project.
+  - Tim Nelson (Code Institute mentor).
+  - [Code Institute](https://codeinstitute.net/ie/).
 <!-- ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 Welcome Conor,
