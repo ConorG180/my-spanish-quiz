@@ -1,1 +1,1 @@
-web: gunicorn my-spanish-quiz.wsgi
+web: node index.js
