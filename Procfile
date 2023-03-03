@@ -1,1 +1,1 @@
-web: gunicorn mcg_dismantlers.wsgi
+web: gunicorn my-spanish-quiz.wsgi
